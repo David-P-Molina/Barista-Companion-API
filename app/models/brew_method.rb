@@ -1,0 +1,2 @@
+class BrewMethod < ApplicationRecord
+end
