@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  roaster: one
+  user: one
+  roast: MyString
+  whole_bean: false
+  description: MyText
+  notes: MyText
+
+two:
+  name: MyString
+  roaster: two
+  user: two
+  roast: MyString
+  whole_bean: false
+  description: MyText
+  notes: MyText
