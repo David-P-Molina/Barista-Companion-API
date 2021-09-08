@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  user: one
+  brew_method: one
+  temperature: 1.5
+  water: MyString
+  coffee_beans: one
+  grind: MyString
+  time: MyString
+
+two:
+  name: MyString
+  user: two
+  brew_method: two
+  temperature: 1.5
+  water: MyString
+  coffee_beans: two
+  grind: MyString
+  time: MyString

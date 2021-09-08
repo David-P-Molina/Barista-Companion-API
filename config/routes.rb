@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :recipes
   resources :coffee_beans
   resources :roasters
   resources :brew_methods
