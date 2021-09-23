@@ -1,7 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Roasters(Roastery/Brand)template = Roaster.find_or_create_by(name: '', description: '', year_founded: , website: '')
+
+# Brew Method template = BrewMethod.find_or_create_by(name: '', description: '', equipment: '')
+
+# Coffee Beans template = CoffeeBean.find_or_create_by(name: '', roaster_id: , user_id: , roast: '', whole_bean: , description: '', notes: '', blend_type: '', region: '', processing_method: '', drying_method: '',  roast_date: '')
+
+# Recipes template = Recipe.find_or_create_by(name: '', user_id: , brew_method_id: , temperature: , water: '', coffee_bean_id: , grind: '', time: , filter: )
