@@ -1,5 +1,7 @@
 # Roasters(Roastery/Brand)template = Roaster.find_or_create_by(name: '', description: '', year_founded: , website: '')
-
+intellegentsia = Roaster.find_or_create_by(name: 'Intelligentsia', description: 'Intelligentsia is a specialty coffee pioneer, rising from humble Chicago roots to a company driven by curiosity, empowerment, and the never-ending quest for the most extraordinary coffee in the world.', year_founded: 1995, website: 'www.intelligentsia.com/')
+wesley_andrews = Roaster.find_or_create_by(name: 'Wesley Andrews', description: 'Wesley Andrews was born from a love of finding the beauty in the everyday. We brew coffee and tea to make moments that complement truly filling conversation. We believe in the power of relationships, and their intrinsic role in bringing quality and equity to everyone—no matter what part of the industry they call home. All of our creations are made with intention, love, and a respect for our customers and producing partners at origin.', year_founded: 2016, website: 'www.wesleyandrews.cc')
+stumptown = Roaster.find_or_create_by(name: 'Stumptown', description: "Stumptown Coffee Roasters is a coffee roaster and retailer based in Portland, Oregon, United States. The chain's flagship café and roastery opened in 1999.", year_founded: 1999, website: 'www.stumptowncoffee.com')
 # Brew Method template = BrewMethod.find_or_create_by(name: '', description: '', equipment: '')
 
 # Coffee Beans template = CoffeeBean.find_or_create_by(name: '', roaster_id: , user_id: , roast: '', whole_bean: , description: '', notes: '', blend_type: '', region: '', processing_method: '', drying_method: '',  roast_date: '')
