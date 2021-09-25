@@ -3,7 +3,13 @@ intellegentsia = Roaster.find_or_create_by(name: 'Intelligentsia', description: 
 wesley_andrews = Roaster.find_or_create_by(name: 'Wesley Andrews', description: 'Wesley Andrews was born from a love of finding the beauty in the everyday. We brew coffee and tea to make moments that complement truly filling conversation. We believe in the power of relationships, and their intrinsic role in bringing quality and equity to everyone—no matter what part of the industry they call home. All of our creations are made with intention, love, and a respect for our customers and producing partners at origin.', year_founded: 2016, website: 'www.wesleyandrews.cc')
 stumptown = Roaster.find_or_create_by(name: 'Stumptown', description: "Stumptown Coffee Roasters is a coffee roaster and retailer based in Portland, Oregon, United States. The chain's flagship café and roastery opened in 1999.", year_founded: 1999, website: 'www.stumptowncoffee.com')
 # Brew Method template = BrewMethod.find_or_create_by(name: '', description: '', equipment: '')
-
+french_press = BrewMethod.find_or_create_by(name: 'French Press', description: '', equipment: '')
+hario_pourover = BrewMethod.find_or_create_by(name: 'Hario V-60 (Pour-over)', description: '', equipment: '')
+cold_brew = BrewMethod.find_or_create_by(name: 'Cold Brew', description: '', equipment: '')
+chemex = BrewMethod.find_or_create_by(name: 'Chemex', description: '', equipment: '')
+aeropress =BrewMethod.find_or_create_by(name: 'Aero-Press', description: '', equipment: '')
+espresso = BrewMethod.find_or_create_by(name: 'Espresso', description: '', equipment: '')
+drip = BrewMethod.find_or_create_by(name: 'Drip Coffee', description: '', equipment: '')
 # Coffee Beans template = CoffeeBean.find_or_create_by(name: '', roaster_id: , user_id: , roast: '', whole_bean: , description: '', notes: '', blend_type: '', region: '', processing_method: '', drying_method: '',  roast_date: '')
 
 # Recipes template = Recipe.find_or_create_by(name: '', user_id: , brew_method_id: , temperature: , water: '', coffee_bean_id: , grind: '', time: , filter: )
