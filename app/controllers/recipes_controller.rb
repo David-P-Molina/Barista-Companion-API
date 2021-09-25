@@ -5,12 +5,12 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
 
-    render json: @recipes
+    render json: RecipeSerializer.new(@recipes)
   end
 
   # GET /recipes/1
   def show
-    render json: @recipe
+    render json: @recipe.slice(:name, :brew_method_id, :temperature, :water, :coffee_bean_id, :grind, :time, :filter, :bloom_time)
   end
 
   # POST /recipes
