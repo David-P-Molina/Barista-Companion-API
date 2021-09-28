@@ -5,12 +5,12 @@ class BrewMethodsController < ApplicationController
   def index
     @brew_methods = BrewMethod.all
 
-    render json: @brew_methods
+    render json: BrewMethodSerializer.new(@brew_methods)
   end
 
   # GET /brew_methods/1
   def show
-    render json: @brew_method
+    render json: @brew_method.slice(:name, :description, :equipment)
   end
 
   # POST /brew_methods
