@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1
   def show
-    render json: @recipe.slice(:name, :brew_method_id, :temperature, :water, :coffee_bean_id, :grind, :time, :filter, :bloom_time)
+    render json: @recipe.slice(:name, :brew_method_id, :brew_method_name, :temperature, :water, :coffee_bean_id, :coffee_bean_name, :grind, :time, :filter, :bloom_time, :user_id, :username)
   end
 
   # POST /recipes
