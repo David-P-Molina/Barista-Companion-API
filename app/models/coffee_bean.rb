@@ -1,5 +1,7 @@
 class CoffeeBean < ApplicationRecord
   belongs_to :roaster
+  validates :name, :roaster_id, :description, presence: true
+  validates :name, uniqueness:, true
 
   #name helper
   def roaster_name=(name)
