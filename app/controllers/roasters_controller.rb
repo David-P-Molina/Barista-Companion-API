@@ -5,12 +5,12 @@ class RoastersController < ApplicationController
   def index
     @roasters = Roaster.all
 
-    render json: @roasters
+    render json: RoasterSerializer.new(@roasters)
   end
 
   # GET /roasters/1
   def show
-    render json: @roaster
+    render json: @roaster.slice(:name, :id, :description, :year_founded)
   end
 
   # POST /roasters
