@@ -6,7 +6,7 @@ class Recipe < ApplicationRecord
   #custom validations 
   
   def temperature_cannot_exceed_boiling
-    if :temperature.present? && :temperature > 212 
+    if temperature.present? && temperature > 212 
       errors.add(:temperature, "Water temperature cannot exceed boiling point!")
     end
   end
