@@ -4,6 +4,5 @@ class AddBlendTypeRegionProcessingMethodDryingMethodAndRoastDateToCoffeeBean < A
     add_column :coffee_beans, :region, :string
     add_column :coffee_beans, :processing_method, :string
     add_column :coffee_beans, :drying_method, :string
-    add_column :coffee_beans, :roast_date, :string
   end
 end

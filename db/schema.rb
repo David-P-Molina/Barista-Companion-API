@@ -36,24 +36,24 @@ ActiveRecord::Schema.define(version: 2021_09_23_130049) do
     t.string "region"
     t.string "processing_method"
     t.string "drying_method"
-    t.string "roast_date"
     t.index ["roaster_id"], name: "index_coffee_beans_on_roaster_id"
   end
 
   create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.bigint "brew_method_id", null: false
-    t.float "temperature"
-    t.string "water"
-    t.bigint "coffee_beans_id", null: false
+    t.integer "temperature"
+    t.integer "water_in_grams"
+    t.bigint "coffee_bean_id", null: false
     t.string "grind"
     t.string "time"
+    t.string "roast_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "filter"
     t.string "bloom_time"
     t.index ["brew_method_id"], name: "index_recipes_on_brew_method_id"
-    t.index ["coffee_beans_id"], name: "index_recipes_on_coffee_beans_id"
+    t.index ["coffee_bean_id"], name: "index_recipes_on_coffee_bean_id"
   end
 
   create_table "roasters", force: :cascade do |t|
@@ -67,5 +67,5 @@ ActiveRecord::Schema.define(version: 2021_09_23_130049) do
 
   add_foreign_key "coffee_beans", "roasters"
   add_foreign_key "recipes", "brew_methods"
-  add_foreign_key "recipes", "coffee_beans", column: "coffee_beans_id"
+  add_foreign_key "recipes", "coffee_beans"
 end
