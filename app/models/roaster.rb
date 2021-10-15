@@ -1,4 +1,5 @@
 class Roaster < ApplicationRecord
+    has_many :coffee_beans
     validates :name, :description, presence: true
     validates :name, uniqueness: true
     validates :year_founded, numericality: true

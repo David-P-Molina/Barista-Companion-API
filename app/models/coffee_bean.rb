@@ -1,5 +1,6 @@
 class CoffeeBean < ApplicationRecord
   belongs_to :roaster
+  has_many :recipes
   validates :name, :roaster_id, :description, presence: true
   validates :name, uniqueness: true
 
