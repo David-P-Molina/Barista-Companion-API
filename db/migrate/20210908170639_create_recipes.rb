@@ -6,7 +6,7 @@ class CreateRecipes < ActiveRecord::Migration[6.1]
       t.references :brew_method, null: false, foreign_key: true
       t.float :temperature
       t.string :water
-      t.references :coffee_beans, null: false, foreign_key: true
+      t.references :coffee_bean, null: false, foreign_key: true
       t.string :grind
       t.string :time
 
