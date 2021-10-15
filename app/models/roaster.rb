@@ -8,5 +8,6 @@ class Roaster < ApplicationRecord
     def year_founded_is_not_future_date
         if :year_founded.present? && :year_founded > Date.today.year
             errors.add(:year_founded, "Roaster Cannot be set in future!")
+        end
     end
 end
