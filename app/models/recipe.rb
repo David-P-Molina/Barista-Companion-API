@@ -1,3 +1,4 @@
+require 'byebug'
 class Recipe < ApplicationRecord
   belongs_to :brew_method
   belongs_to :coffee_bean
@@ -26,5 +27,8 @@ class Recipe < ApplicationRecord
   end
   def coffee_bean_name
     self.coffee_bean.try(:name)
+  end
+  def roaster_name
+    self.coffee_bean.try(:roaster_name)
   end
 end
