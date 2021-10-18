@@ -10,7 +10,7 @@ class CoffeeBeansController < ApplicationController
 
   # GET /coffee_beans/1
   def show
-    render json: @coffee_bean.slice(:id, :name, :roaster_name, :roaster_id, :roast, :whole_bean, :description, :notes, :blend_type, :region, :processing_method, :drying_method, :roast_date)
+    render json: @coffee_bean.slice(:id, :name, :roaster_name, :roaster_id, :roast, :whole_bean, :description, :notes, :blend_type, :region, :water_in_grams, :coffee_in_grams, :processing_method, :drying_method, :roast_date)
   end
 
   # POST /coffee_beans
@@ -46,6 +46,6 @@ class CoffeeBeansController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def coffee_bean_params
-      params.require(:coffee_bean).permit(:id, :name, :roaster_name, :roaster_id, :roast, :whole_bean, :description, :notes, :blend_type, :region, :processing_method, :drying_method, :roast_date)
+      params.require(:coffee_bean).permit(:id, :name, :roaster_name, :water_in_grams, :coffee_in_grams, :roaster_id, :roast, :whole_bean, :description, :notes, :blend_type, :region, :processing_method, :drying_method, :roast_date)
     end
 end
