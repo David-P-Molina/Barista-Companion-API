@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1
   def show
-    render json: @recipe.slice(:name, :brew_method_id, :brew_method_name, :temperature, :water_in_grams, :coffee_in_grams, :coffee_bean_id, :coffee_bean_name, :grind, :time, :filter, :bloom_time, :user_id, :username)
+    render json: @recipe.slice(:name, :date_attempted, :brew_method_id, :brew_method_name, :coffee_bean_id, :coffee_bean_name, :roaster_name, :roast_date, :grind, :coffee_in_grams, :water_in_grams, :temperature, :filter, :time, :bloom_time, :notes)
   end
 
   # POST /recipes
@@ -46,6 +46,6 @@ class RecipesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recipe_params
-      params.require(:recipe).permit(:name, :user_id, :brew_method_id, :temperature, :water_in_grams, :coffee_in_grams, :coffee_beans_id, :grind, :time)
+      params.require(:recipe).permit(:name, :date_attempted, :brew_method_id, :coffee_bean_id, :roast_date, :grind, :coffee_in_grams, :water_in_grams, :temperature, :filter, :time, :bloom_time, :notes)
     end
 end
