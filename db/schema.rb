@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_15_183235) do
+ActiveRecord::Schema.define(version: 2021_10_19_222200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_10_15_183235) do
     t.boolean "filter"
     t.string "bloom_time"
     t.integer "coffee_in_grams"
+    t.string "date_attempted"
     t.index ["brew_method_id"], name: "index_recipes_on_brew_method_id"
     t.index ["coffee_bean_id"], name: "index_recipes_on_coffee_bean_id"
   end
