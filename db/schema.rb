@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_222200) do
     t.string "bloom_time"
     t.integer "coffee_in_grams"
     t.string "date_attempted"
+    t.text "notes"
     t.index ["brew_method_id"], name: "index_recipes_on_brew_method_id"
     t.index ["coffee_bean_id"], name: "index_recipes_on_coffee_bean_id"
   end
