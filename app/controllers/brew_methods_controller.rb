@@ -20,7 +20,7 @@ class BrewMethodsController < ApplicationController
     if @brew_method.save
       render json: @brew_method, status: :created, location: @brew_method
     else
-      render json: @brew_method.errors, status: :unprocessable_entity
+      render json: @brew_method.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class BrewMethodsController < ApplicationController
     if @brew_method.update(brew_method_params)
       render json: @brew_method
     else
-      render json: @brew_method.errors, status: :unprocessable_entity
+      render json: @brew_method.errors.full_messages, status: :unprocessable_entity
     end
   end
 

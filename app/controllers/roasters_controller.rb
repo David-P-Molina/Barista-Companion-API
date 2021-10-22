@@ -20,7 +20,7 @@ class RoastersController < ApplicationController
     if @roaster.save
       render json: @roaster, status: :created, location: @roaster
     else
-      render json: @roaster.errors, status: :unprocessable_entity
+      render json: @roaster.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class RoastersController < ApplicationController
     if @roaster.update(roaster_params)
       render json: @roaster
     else
-      render json: @roaster.errors, status: :unprocessable_entity
+      render json: @roaster.errors.full_messages, status: :unprocessable_entity
     end
   end
 

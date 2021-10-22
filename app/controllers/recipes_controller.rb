@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       render json: @recipe, status: :created, location: @recipe
     else
-      render json: @recipe.errors, status: :unprocessable_entity
+      render json: @recipe.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class RecipesController < ApplicationController
     if @recipe.update(recipe_params)
       render json: @recipe
     else
-      render json: @recipe.errors, status: :unprocessable_entity
+      render json: @recipe.errors.full_messages, status: :unprocessable_entity
     end
   end
 

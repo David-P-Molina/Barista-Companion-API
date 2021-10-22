@@ -20,7 +20,7 @@ class CoffeeBeansController < ApplicationController
     if @coffee_bean.save
       render json: @coffee_bean, status: :created, location: @coffee_bean
     else
-      render json: @coffee_bean.errors, status: :unprocessable_entity
+      render json: @coffee_bean.errors.full_messages, status: :unprocessable_entity
     end
   end
 
