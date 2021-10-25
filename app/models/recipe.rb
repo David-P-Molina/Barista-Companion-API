@@ -5,9 +5,14 @@ class Recipe < ApplicationRecord
   validates :name, :brew_method_id, :temperature, :time, :filter, :name, :coffee_in_grams, :brew_method_id, :grind, presence: true
   validates :temperature, :water_in_grams, :bloom_time, :time, numericality: { only_integer: true }
   validate :temperature_cannot_exceed_boiling
+  validate :roast_date_cannot_be_after_brew_date
 
   #custom validations 
-  
+  def roast_date_cannot_be_after_brew_date
+    if brew_date.present? && roast_date.present? && brew_date > roast_date
+      errors.add(:roast_date, "Cannot Brew Beans that have not been roasted!")
+    end
+  end
   def temperature_cannot_exceed_boiling
     if temperature.present? && temperature > 212 
       errors.add(:temperature, "Water temperature cannot exceed boiling point!")
