@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_19_222200) do
+ActiveRecord::Schema.define(version: 2021_10_25_222612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_222200) do
     t.string "equipment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "deletable"
   end
 
   create_table "coffee_beans", force: :cascade do |t|
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_222200) do
     t.string "region"
     t.string "processing_method"
     t.string "drying_method"
+    t.boolean "deletable"
     t.index ["roaster_id"], name: "index_coffee_beans_on_roaster_id"
   end
 
@@ -55,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_222200) do
     t.integer "coffee_in_grams"
     t.string "date_attempted"
     t.text "notes"
+    t.boolean "deletable"
     t.index ["brew_method_id"], name: "index_recipes_on_brew_method_id"
     t.index ["coffee_bean_id"], name: "index_recipes_on_coffee_bean_id"
   end
@@ -66,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_222200) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "website"
+    t.boolean "deletable"
   end
 
   add_foreign_key "coffee_beans", "roasters"
