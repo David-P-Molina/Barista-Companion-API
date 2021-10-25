@@ -9,7 +9,7 @@ class Recipe < ApplicationRecord
 
   #custom validations 
   def roast_date_cannot_be_after_brew_date
-    if brew_date.present? && roast_date.present? && brew_date > roast_date
+    if brew_date.present? && roast_date.present? && brew_date < roast_date
       errors.add(:roast_date, "Cannot Brew Beans that have not been roasted!")
     end
   end
