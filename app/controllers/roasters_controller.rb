@@ -10,7 +10,7 @@ class RoastersController < ApplicationController
 
   # GET /roasters/1
   def show
-    render json: @roaster.slice(:name, :id, :description, :year_founded)
+    render json: @roaster.slice(:name, :id, :description, :year_founded, :deletable)
   end
 
   # POST /roasters
@@ -46,6 +46,6 @@ class RoastersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def roaster_params
-      params.require(:roaster).permit(:name, :description, :year_founded)
+      params.require(:roaster).permit(:name, :description, :year_founded, :deletable)
     end
 end

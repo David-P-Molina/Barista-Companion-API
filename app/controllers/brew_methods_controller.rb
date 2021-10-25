@@ -10,7 +10,7 @@ class BrewMethodsController < ApplicationController
 
   # GET /brew_methods/1
   def show
-    render json: @brew_method.slice(:name, :description, :equipment)
+    render json: @brew_method.slice(:name, :description, :equipment, :deletable)
   end
 
   # POST /brew_methods
@@ -46,6 +46,6 @@ class BrewMethodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def brew_method_params
-      params.require(:brew_method).permit(:name, :description, :equipment)
+      params.require(:brew_method).permit(:name, :description, :equipment, :deletable)
     end
 end
