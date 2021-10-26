@@ -10,7 +10,7 @@ class RoastersController < ApplicationController
 
   # GET /roasters/1
   def show
-    render json: @roaster.slice(:name, :id, :description, :year_founded, :deletable)
+    render json: @roaster.slice(:id, :name, :description, :year_founded, :deletable)
   end
 
   # POST /roasters

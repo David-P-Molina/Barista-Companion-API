@@ -10,7 +10,7 @@ class BrewMethodsController < ApplicationController
 
   # GET /brew_methods/1
   def show
-    render json: @brew_method.slice(:name, :description, :equipment, :deletable)
+    render json: @brew_method.slice(:id, :name, :description, :equipment, :deletable)
   end
 
   # POST /brew_methods

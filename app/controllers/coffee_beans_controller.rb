@@ -46,6 +46,6 @@ class CoffeeBeansController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def coffee_bean_params
-      params.require(:coffee_bean).permit(:id, :name, :roaster_name, :roaster_id, :roast, :whole_bean, :description, :notes, :blend_type, :region, :processing_method, :drying_method, :roast_date, :deletable)
+      params.require(:coffee_bean).permit(:name, :roaster_name, :roaster_id, :roast, :whole_bean, :description, :notes, :blend_type, :region, :processing_method, :drying_method, :roast_date, :deletable)
     end
 end
