@@ -1,5 +1,5 @@
 class Roaster < ApplicationRecord
-    has_many :coffee_beans
+    has_many :coffee_beans, dependent: :nullify
     validates :name, :description, presence: true
     validates :name, uniqueness: true
     validates :year_founded, numericality: { only_integer: true }
