@@ -4,10 +4,16 @@ class Recipe < ApplicationRecord
   belongs_to :coffee_bean
   validates :name, :brew_method_id, :temperature, :time, :name, :coffee_in_grams, :brew_method_id, :grind, presence: true
   validates :temperature, :water_in_grams, :bloom_time, :time, numericality: { only_integer: true }
-  validate :temperature_cannot_exceed_boiling
-  validate :roast_date_cannot_be_after_brew_date
+  validate :temperature_cannot_exceed_boiling, :roast_date_is_not_future_date, :roast_date_cannot_be_after_brew_date
 
-  #custom validations 
+
+
+  #custom validations
+  def roast_date_is_not_future_date
+    if roast_date.present? && roast_date > Date.today.year
+        errors.add(:roast_date, "Roast date can't be set in the future!")
+    end
+  end 
   def roast_date_cannot_be_after_brew_date
     if date_attempted.present? && roast_date.present? && date_attempted < roast_date
       errors.add(:roast_date, "Cannot Brew Beans that have not been roasted!")
