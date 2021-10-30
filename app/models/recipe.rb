@@ -10,7 +10,7 @@ class Recipe < ApplicationRecord
 
   #custom validations
   def roast_date_is_not_future_date
-    if roast_date.present? && roast_date > Date.today.year
+    if roast_date.present? && roast_date.to_i > Date.today.year
         errors.add(:roast_date, "Roast date can't be set in the future!")
     end
   end 

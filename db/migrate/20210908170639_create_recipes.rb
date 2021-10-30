@@ -10,6 +10,7 @@ class CreateRecipes < ActiveRecord::Migration[6.1]
       t.string :grind
       t.string :time
       t.string :roast_date
+      t.boolean :whole_bean
 
       t.timestamps
     end
