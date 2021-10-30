@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2021_10_25_222612) do
     t.string "name"
     t.bigint "roaster_id", null: false
     t.string "roast"
-    t.boolean "whole_bean"
     t.text "description"
     t.text "notes"
     t.datetime "created_at", precision: 6, null: false
@@ -50,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_10_25_222612) do
     t.string "grind"
     t.string "time"
     t.string "roast_date"
+    t.boolean "whole_bean"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "filter"
