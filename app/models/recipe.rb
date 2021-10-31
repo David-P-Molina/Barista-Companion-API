@@ -3,7 +3,7 @@ class Recipe < ApplicationRecord
   belongs_to :brew_method
   belongs_to :coffee_bean
   validates :name, :brew_method_id, :temperature, :time, :name, :coffee_in_grams, :brew_method_id, :grind, presence: true
-  validates :temperature, :water_in_grams, :bloom_time, :time, numericality: { only_integer: true }
+  validates :temperature, :water_in_grams, :bloom_time, :time, :elevation, numericality: { only_integer: true }
   validate :temperature_cannot_exceed_boiling, :roast_date_is_not_future_date, :roast_date_cannot_be_after_brew_date
 
 
