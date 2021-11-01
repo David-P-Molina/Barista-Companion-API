@@ -3,7 +3,6 @@ class CoffeeBean < ApplicationRecord
   has_many :recipes, dependent: :nullify
   has_many :brew_methods, through: :coffee_beans
   validates :name, :roaster_id, :description, presence: true
-  validates :elevation, numericality: { only_integer: true }, allow_nil: true
   validates :name, uniqueness: true
 
   #name helper
